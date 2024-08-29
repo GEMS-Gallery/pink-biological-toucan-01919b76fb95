@@ -1,0 +1,18 @@
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type Item = 
+ record {
+   description: opt text;
+   id: nat;
+   title: text;
+ };
+service : {
+  addItem: (text, opt text) -> ();
+  getAboutInfo: () -> (text) query;
+  getItems: () -> (vec Item) query;
+  getWelcomeMessage: () -> (text) query;
+  submitContactForm: (text, text, text) -> (Result);
+}
